@@ -1,0 +1,63 @@
+*{
+    margin: 0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family:"Kanit-BoldItalic";
+    src: url("font/Kanit-BoldItalic.ttf");
+}
+body{
+    background-color:#F0F2F5 !important ;
+    font-family:"Kanit-BoldItalic";
+}
+.number{
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    font-size: 3rem;
+
+}
+.stop-watch{
+    margin-top: 40px;
+    width: 100%;
+    min-height:auto ;
+    /* border: solid; */
+    background-color: #fff !important;
+}
+.button-start-stop{
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+.button-start-stop button{
+    margin-left: 3%;
+    width: 15%;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.snaps{
+width: 100%;
+/* border: solid; */
+}
+.second-minute{
+    display: flex;
+    justify-content: space-around;
+}
+.second-minute div{
+    margin-top: 10px;
+    /* border-right: solid 0.5px; */
+    /* border-bottom: solid 0.5px; */
+    width: 30%;
+    text-align: center;
+}
+.lap-minute-second-name div{
+    font-weight: bolder;
+}
+.lap-minute-second-name{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}

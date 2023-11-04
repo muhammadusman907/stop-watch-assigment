@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice javascripte ghouse</title>
+    <script src="./index.js " defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container stop-watch " id="stop-watch-div">
+        <div class="d-flex justify-content-around pt-3">
+            <button class="btn btn-outline-primary w-25">stop-watch </button>
+            <button class="btn btn-outline-primary w-25"  onclick="timers()">timer </button>
+        </div>
+        <h2 style="text-align: center;">stop-watch</h2>
+        <div class="number d-flex ">
+            <div id="second">00</div>
+            <div>:</div>
+            <div id="minute">00</div>
+            <div>:</div>
+            <div id="milli-sec">00</div>
+        </div>
+
+        <div class="button-start-stop" id="parent-button">
+            <button class="btn btn-primary" id="start" onclick="start()">start</button>
+            <button class="btn btn-danger" id="stop" style="display: none;" onclick="stop()">stop</button>
+            <button class="btn btn-info" id="reset" onclick="reset()">reset</button>
+            <button class="btn btn-danger" id="lap" onclick="lap()" >lap</button>
+        </div>
+
+    </div>
+    <div class="container snaps mt-3">
+        <div class=" w-100 lap-minute-second-name" style="display: none;" id="lap-minute-second-name">
+            <div> Minute</div>
+            <div>Second</div>
+            <div>Milli-sec</div>
+        </div>
+        
+        <div id="lap-minute-second">
+           
+        </div>
+
+        <!-- ======== second timer ========== -->
+        <div class="container stop-watch" id="timer-div" style="display: none;">
+            <div class="d-flex justify-content-around pt-3">
+                <button class="btn btn-outline-primary w-25"  onclick="stopWatch()">stop-watch </button>
+                <button class="btn btn-outline-primary w-25" >timer </button>
+            </div>
+            <h2 style="text-align: center;">Timer</h2>
+            <div class="number d-flex ">
+                <div id="timer-minute">00</div>
+                <div>:</div>
+                <div id="timer-second">00s</div>
+                <!-- <div>:</div>
+                <div id="milli-sec">00</div> -->
+            </div>
+    
+            <div class="button-start-stop" id="parent-button">
+                <button class="btn btn-primary" id="start" onclick="timerStart()">start</button>
+                <button class="btn btn-danger" id="stop" style="display: none;" onclick="TimerStop()">stop</button>
+                <button class="btn btn-info" id="reset" onclick="timerReset()">reset</button>
+                <!-- <button class="btn btn-danger" id="lap" onclick="lap()" >lap</button> -->
+            </div>
+    
+        </div>
+        <div class="container snaps mt-3">
+            <div class=" w-100 lap-minute-second-name" style="display: none;" id="lap-minute-second-name">
+                <div> Minute</div>
+                <div>Second</div>
+                <div>Milli-sec</div>
+            </div>
+            
+            <div id="lap-minute-second">
+               
+            </div>
+
+    </div>
+</body>
+
+</html>
