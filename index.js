@@ -1,15 +1,16 @@
 var min = 0;
 var sec = 0 ;
 var milliSec = 0 ;
-var TimerMinute = 5;
-var TimerSecond = 0;
+var timerMinute = 4;
+var timerSecond = 59;
 var interval = false ;
+var timerInterval = false;
 
 var milliSecond =  document.getElementById("milli-sec");
 var second =  document.getElementById("second");
 var minute =  document.getElementById("minute");
-var timerMinute =  document.getElementById("timer-minute");
-var timerSecond =  document.getElementById("timer-second");
+var timerMinuteDiv =  document.getElementById("timer-minute");
+var timerSecondDiv =  document.getElementById("timer-second");
 var lapMinute =  document.getElementById("lap-minute");
 var lapSecond =  document.getElementById("lap-second");
 var lapMilliSecond =  document.getElementById("lap-millisecond");
@@ -19,12 +20,15 @@ var starts =document.getElementById("start")
 var stops =document.getElementById("stop")
 var stopWatchDiv =document.getElementById("stop-watch-div")
 var timerDiv = document.getElementById("timer-div")
+var editValueInput = document.getElementById ("edit-value")
+
+
+timerMinuteDiv.innerHTML = timerMinute;
+timerSecondDiv.innerHTML = timerSecond +"s";
 
 function stopWatch(){
    timerDiv.style.display = "none"
    stopWatchDiv.style.display = "block"
-
-    
 }
 
 
@@ -107,18 +111,38 @@ function timers(){
    lapMinuteSecondName.style.display = "none";
 //    lapNumber.style.display = "none";
 }
+function timerStop(){
+    timerInterval = false;
+}
+function timerStart(){
+   timerInterval = true ;
+}
 
-// function timerStart(){
-//    interval = true ;
-//    if(interval){
-//        timerMinute--
-//        if (timerSecond < 1)
-//        timerSecond--
-//    }
-// }
-// function timerStop(){
-    
-// }
+setInterval(function (){
+  if ( timerInterval === true){ 
+       timerSecond--
+       console.log(timerSecond)
+       timerSecondDiv.innerHTML = timerSecond +"s";
+       timerMinuteDiv.innerHTML = timerMinute;
+       if (timerSecond < 1){
+          timerSecond = 59
+          timerMinute--
+          timerMinuteDiv.innerHTML = timerMinute;
+       if ( timerMinute < 0 ){
+        alert("timer compelete")
+           timerMinute = 4 ;
+           timerSecond = 59;
+           timerSecondDiv.innerHTML = timerSecond;
+           timerMinuteDiv.innerHTML = timerMinute;
+           timerStop()
+       }
+       }  
+   }
+}
+,100)
 // function timerReset(){
     
 // }
+ function editValue(){
+    alert("edit value")
+ }

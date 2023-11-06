@@ -56,7 +56,8 @@
                 <button class="btn btn-outline-primary w-25" >timer </button>
             </div>
             <h2 style="text-align: center;">Timer</h2>
-            <div class="number d-flex ">
+            <div class="number d-flex" onclick="editValue()">
+                <input type="text" id="edit-value">
                 <div id="timer-minute">00</div>
                 <div>:</div>
                 <div id="timer-second">00s</div>
@@ -66,7 +67,7 @@
     
             <div class="button-start-stop" id="parent-button">
                 <button class="btn btn-primary" id="start" onclick="timerStart()">start</button>
-                <button class="btn btn-danger" id="stop" style="display: none;" onclick="TimerStop()">stop</button>
+                <button class="btn btn-danger" id="stop"  onclick="timerStop()">stop</button>
                 <button class="btn btn-info" id="reset" onclick="timerReset()">reset</button>
                 <!-- <button class="btn btn-danger" id="lap" onclick="lap()" >lap</button> -->
             </div>
