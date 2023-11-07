@@ -103,6 +103,11 @@ function lap(){
     console.log(lapNumber);
 }
 
+ function editValue(){
+
+    editValueInput.style.display = "block";
+    alert("edit value")
+ }
 
 function timers(){
    stopWatchDiv.style.display = "none"
@@ -115,7 +120,9 @@ function timerStop(){
     timerInterval = false;
 }
 function timerStart(){
-   timerInterval = true ;
+   timerInterval = true ; 
+    timerMinute = editValueInput.value;
+   editValueInput.style.display = "none";
 }
 
 setInterval(function (){
@@ -143,6 +150,3 @@ setInterval(function (){
 // function timerReset(){
     
 // }
- function editValue(){
-    alert("edit value")
- }
