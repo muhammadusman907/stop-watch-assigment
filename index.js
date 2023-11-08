@@ -21,7 +21,7 @@ var stops =document.getElementById("stop")
 var stopWatchDiv =document.getElementById("stop-watch-div")
 var timerDiv = document.getElementById("timer-div")
 var editValueInput = document.getElementById ("edit-value")
-
+var numSecond ;
 
 timerMinuteDiv.innerHTML = timerMinute;
 timerSecondDiv.innerHTML = timerSecond +"s";
@@ -122,6 +122,13 @@ function timerStop(){
 function timerStart(){
    timerInterval = true ; 
     timerMinute = editValueInput.value;
+    for (var i = 0 ; i < editValueInput.value.length ; i++){
+      if (editValueInput.value[i] === ":"){
+         alert("num")
+         numSecond = editValueInput.value ;
+         console.log(numSecond)
+      }
+    }
    editValueInput.style.display = "none";
 }
 
