@@ -124,8 +124,10 @@ function timerStart(){
     timerMinute = editValueInput.value;
     for (var i = 0 ; i < editValueInput.value.length ; i++){
       if (editValueInput.value[i] === ":"){
-         alert("num")
+         // alert("num")
          numSecond = editValueInput.value ;
+        timerSecond = editValueInput.value;
+
          console.log(numSecond)
       }
     }
