@@ -125,10 +125,10 @@ function timerStart(){
     for (var i = 0 ; i < editValueInput.value.length ; i++){
       if (editValueInput.value[i] === ":"){
          // alert("num")
-         numSecond = editValueInput.value ;
-        timerSecond = editValueInput.value;
-
-         console.log(numSecond)
+         console.log(editValueInput.value[i].slice(1,editValueInput.value.length))
+         numSecond = editValueInput.value[i].slice(1,editValueInput.value.length) ;
+      //   timerSecond = numSecond;
+      //    console.log(numSecond)
       }
     }
    editValueInput.style.display = "none";
