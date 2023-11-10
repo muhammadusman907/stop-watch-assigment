@@ -121,16 +121,24 @@ function timerStop(){
 }
 function timerStart(){
    timerInterval = true ; 
-    timerMinute = editValueInput.value;
-    for (var i = 0 ; i < editValueInput.value.length ; i++){
-      if (editValueInput.value[i] === ":"){
-         // alert("num")
-         console.log(editValueInput.value[i].slice(1,editValueInput.value.length))
-         numSecond = editValueInput.value[i].slice(1,editValueInput.value.length) ;
-      //   timerSecond = numSecond;
-      //    console.log(numSecond)
+   if (editValueInput.value.trim() === ""){
+      alert("input not filled")
+   }
+   else{
+      for (var i = 0 ; i < editValueInput.value.length ; i++){
+         if (editValueInput.value[i] === ":"){
+            var firstValue =  editValueInput.value.slice(i + 1, i.length)
+            var secondValue  = editValueInput.value.slice(0 , i)
+            timerSecond = secondValue ;
+            timerMinute = firstValue ;
+            console.log(firstValue)
+            console.log(secondValue)
+         }
+         else{
+            console.log(editValueInput.value)
+         }
       }
-    }
+   }
    editValueInput.style.display = "none";
 }
 
