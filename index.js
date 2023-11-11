@@ -21,6 +21,8 @@ var stops =document.getElementById("stop")
 var stopWatchDiv =document.getElementById("stop-watch-div")
 var timerDiv = document.getElementById("timer-div")
 var editValueInput = document.getElementById ("edit-value")
+var secondMinuteDot = document.getElementById ("second-minute-dot")
+
 var numSecond ;
 
 timerMinuteDiv.innerHTML = timerMinute;
@@ -103,11 +105,7 @@ function lap(){
     console.log(lapNumber);
 }
 
- function editValue(){
 
-    editValueInput.style.display = "block";
-    alert("edit value")
- }
 
 function timers(){
    stopWatchDiv.style.display = "none"
@@ -121,14 +119,16 @@ function timerStop(){
 }
 function timerStart(){
    timerInterval = true ; 
+   
+
    if (editValueInput.value.trim() === ""){
       alert("input not filled")
    }
    else{
       for (var i = 0 ; i < editValueInput.value.length ; i++){
          if (editValueInput.value[i] === ":"){
-            var firstValue =  editValueInput.value.slice(i + 1, i.length)
-            var secondValue  = editValueInput.value.slice(0 , i)
+            var secondValue =  editValueInput.value.slice(i + 1, i.length)
+            var firstValue  = editValueInput.value.slice(0 , i)
             timerSecond = secondValue ;
             timerMinute = firstValue ;
             console.log(firstValue)
@@ -140,7 +140,12 @@ function timerStart(){
       }
    }
    editValueInput.style.display = "none";
+   timerSecondDiv.style.display = "block";
+   timerMinuteDiv.style.display = "block";
+   secondMinuteDot.style.display = "block";
 }
+
+ 
 
 setInterval(function (){
   if ( timerInterval === true){ 
@@ -164,6 +169,15 @@ setInterval(function (){
    }
 }
 ,1000)
+
+function editValue(){
+    editValueInput.style.display = "block";
+    editValueInput.value = timerMinuteDiv.innerText+ ":" + timerSecondDiv.innerHTML.slice(0,-1); 
+    secondMinuteDot.style.display = "none";
+    timerMinuteDiv.style.display = "none"
+    timerSecondDiv.style.display = "none"
+ }
+
 // function timerReset(){
     
 // }

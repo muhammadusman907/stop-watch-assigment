@@ -23,6 +23,12 @@ body{
 .number div {
     cursor: pointer;
 }
+.number input {
+    width: 50%;
+    height: 100px;
+    text-align: center;
+    font-size: 100%;
+}
 .stop-watch{
     margin-top: 40px;
     width: 100%;
