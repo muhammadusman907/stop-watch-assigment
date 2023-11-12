@@ -22,6 +22,8 @@ var stopWatchDiv =document.getElementById("stop-watch-div")
 var timerDiv = document.getElementById("timer-div")
 var editValueInput = document.getElementById ("edit-value")
 var secondMinuteDot = document.getElementById ("second-minute-dot")
+var timerStartBtn = document.getElementById ("timer-start")
+var timerStopBtn = document.getElementById ("timer-stop")
 
 var numSecond ;
 
@@ -116,13 +118,19 @@ function timers(){
 }
 function timerStop(){
     timerInterval = false;
+     timerStopBtn.style.display = "none";
+     timerStartBtn.style.display = "block";
+
 }
 function timerStart(){
+   timerStartBtn.style.display = "none";
+   timerStopBtn.style.display = "block";
+
    timerInterval = true ; 
    
 
    if (editValueInput.value.trim() === ""){
-      alert("input not filled")
+      // alert("input not filled")
    }
    else{
       for (var i = 0 ; i < editValueInput.value.length ; i++){
@@ -178,6 +186,12 @@ function editValue(){
     timerSecondDiv.style.display = "none"
  }
 
-// function timerReset(){
-    
-// }
+function timerReset(){
+   timerInterval = false;
+   timerMinute = "00";
+   timerSecond = "00";
+   timerMinuteDiv.innerHTML = timerMinute ;
+   timerSecondDiv.innerHTML = timerSecond ;
+   timerStartBtn.style.display = "block";
+   timerStopBtn.style.display = "none";
+}
